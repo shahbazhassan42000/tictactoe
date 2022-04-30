@@ -1,0 +1,185 @@
+/************************************** DESKTOP VIEW ****************************************/
+body {
+    background-color: #55E9BC;
+    color: #537780;
+    font-size: 16px;
+    font-family: "Roboto", sans-serif;
+    text-align: center;
+}
+#wrapper,#user_input{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+#user_input,#result{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: #537780;
+    opacity: 0.8;
+    display: flex; /*TODO make it flex in js*/
+    z-index: 1;
+    justify-content: center;
+    align-items: center;
+}
+.msg{
+    margin-top: 0;
+    margin-bottom: 24px;
+    color: #FFFCCA;
+    font-size: 3rem;
+}
+form[name="player_form"]{
+    display: flex;
+    flex-direction: column;
+    gap:20px;
+    justify-content: center;
+    align-items: center;
+}
+form[name="player_form"] input{
+    font-size: 3rem;
+}
+.btn,form[name="player_form"] input{
+    background: #11D3C8;
+    color: #FFFCCA;
+    border-radius: 5px;
+    border: 2px solid #FFFCCA;
+    padding: 5px 10px;
+    text-align: center;
+}
+form[name="player_form"] input[type="text"]:focus-visible{
+    outline: #537780 auto 1px;
+}
+#player_btn{
+    font-size: 2rem;
+}
+.btn:active{
+    transform: translateY(10px);
+}
+.btn:focus,.btn:hover,.btn:active,.col:hover{
+    background: #0fbea9;
+}
+
+#container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.col{
+    height: 6.25rem;
+    width: 6.25rem;
+    background: #11D3BC;
+    transition: background-color 0.25s ease;
+    border-bottom: 0.125rem solid #55E9BC;
+    border-right: 0.125rem solid #55E9BC;
+    color: #FFFCCA;
+    font-size: 3rem; /*TODO*/
+    cursor: pointer;
+}
+.col u{
+    position: absolute;
+    height: 6.25rem;
+    width: 6.25rem;
+}
+.col u.o:after{
+    content: "";
+    border-radius: 50%;
+    height: 40%;
+    width: 40%;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%) translateX(-50%);
+    animation: o 0.25s;
+    border: 0.625rem solid #FFFCCA;
+}
+@keyframes o {
+    from {
+        height: 90%;
+        width: 90%;
+    }
+    to {
+        height: 60%;
+        width: 60%;
+    }
+}
+.col u.x:before{
+    content: "";
+    background-color: #FFFCCA;
+    height: 60%;
+    width: 10%;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%) translateX(-50%) rotate(45deg);
+    animation: x 0.25s;
+}
+.col u.x:after{
+    content: "";
+    background-color: #FFFCCA;
+    height: 60%;
+    width: 10%;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%) translateX(-50%) rotate(-45deg);
+    animation: x 0.25s;
+}
+@keyframes x {
+    from {
+        height: 90%;
+        width: 15%;
+    }
+    to {
+        height: 60%;
+        width: 10%;
+    }
+}
+#score{
+    display: flex;
+    padding-top: 20px;
+    flex-direction: column;
+    gap: 20px;
+}
+#score .col{
+    font-size: 16px;
+    font-weight: bold;
+    background: inherit;
+    display: grid;
+    grid-template-columns: 90% 10%;
+    height: auto;
+    width: 80%;
+}
+#score .col h2{
+    color: #537780;
+}
+#score h1{
+    color: #FFFCCA;
+    padding-left: 20px;
+}
+#result{
+    display: none;
+}
+#win_result{
+    margin-bottom: 10px;
+}
+#play_again{
+    height: 5rem;
+    width: 5rem;
+    font-size: 4rem;
+    border: none;
+    border-radius: 0;
+}
+
+/************************************** MOBILE VIEW *****************************************/
+@media only screen and (max-width: 600px) {
+    input[name="name"]{
+        width: 80%;
+    }
+    #board_table{
+        margin: 0 auto;
+    }
+}

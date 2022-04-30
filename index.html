@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <title>Tic Tac Toe</title>
+    <link rel="icon" type="image/png" href="images/ttt.png">
+    <link rel="stylesheet" href="css/cssReset.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/script.js"></script>
+</head>
+<body>
+    <div id="wrapper">
+        <section id="user_input">
+            <div>
+                <h2 class="msg">Player-<span id="player_no">1</span></h2>
+                <form name="player_form">
+                    <input name="name" type="text" maxlength="30" required>
+                    <input id="player_btn" class="btn" type="submit" value="ENTER">
+                </form>
+            </div>
+        </section>
+        <section id="container">
+            <div id="game_board">
+                <h1 class="msg" id="player_turn"></h1>
+                <table id="board_table">
+                    <tr>
+                        <td><div class="col"><u></u></div></td>
+                        <td><div class="col"><u></u></div></td>
+                        <td><div class="col"><u></u></div></td>
+                    </tr>
+                    <tr>
+                        <td><div class="col"><u></u></div></td>
+                        <td><div class="col"><u></u></div></td>
+                        <td><div class="col"><u></u></div></td>
+                    </tr>
+                    <tr>
+                        <td><div class="col"><u></u></div></td>
+                        <td><div class="col"><u></u></div></td>
+                        <td><div class="col"><u></u></div></td>
+                    </tr>
+                </table>
+            </div>
+        </section>
+        <section id="score">
+            <div class="col">
+                <h2 id="p1_name">Player-1</h2>
+                <h1 id="p1_result">0</h1>
+            </div>
+            <div class="col">
+                <h2>Draw</h2>
+                <h1 id="draw_result">0</h1>
+            </div>
+            <div class="col">
+                <h2 id="p2_name">Player-2</h2>
+                <h1 id="p2_result">0</h1>
+            </div>
+        </section>
+        <section id="result">
+            <div>
+                <h2 class="msg" id="win_result"></h2>
+                <button class="btn" id="play_again"><i class="fa fa-refresh"></i></button>
+            </div>
+
+        </section>
+    </div>
+</body>
+</html>
